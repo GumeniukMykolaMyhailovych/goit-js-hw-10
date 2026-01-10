@@ -3,12 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build --base=/goit-js-hw-10/",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "glob": "^11.0.0",

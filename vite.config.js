@@ -6,24 +6,18 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig({
   root: 'src',
-  
-  base: './',
-  
+
   build: {
     outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       input: glob.sync('src/*.html', { absolute: true }),
-      output: {
-        entryFileNames: '[name].js',
-        assetFileNames: '[name][extname]',
-      },
     },
   },
+
   plugins: [
     injectHTML(),
     FullReload(['src/**/*.html']),
-    
     SortCss({ sort: 'mobile-first' }),
   ],
 });
