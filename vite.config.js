@@ -5,13 +5,14 @@ import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig({
-  root: 'src', // коренева папка з index.html
-  base: '/goit-js-hw-10/', // <-- обов'язково заміни на свій репозиторій
+  root: 'src',
+  
+  base: '/goit-js-hw-10/',
+  
   build: {
-    outDir: '../dist', // dist поза src
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
-      // збірка всіх html файлів у src
       input: glob.sync('src/*.html', { absolute: true }),
       output: {
         entryFileNames: '[name].js',
@@ -21,7 +22,8 @@ export default defineConfig({
   },
   plugins: [
     injectHTML(),
-    FullReload(['src/**/*.html']), // стежимо за усіма html в src
+    FullReload(['src/**/*.html']),
+    
     SortCss({ sort: 'mobile-first' }),
   ],
 });
